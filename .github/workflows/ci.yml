@@ -5,15 +5,12 @@ on:
     branches: [main]
 
 jobs:
-  test:
-    name: Test
+  Tests:
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -24,4 +21,4 @@ jobs:
         run: npm ci
 
       - name: Run tests
-        run: npm run test -- --coverage
+        run: npm run test
